@@ -1,6 +1,5 @@
 <template>
   <div v-if="!item.hidden" class="menu-wrapper">
-
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
       <app-link :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
@@ -9,7 +8,7 @@
       </app-link>
     </template>
 
-    <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)">
+    <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
         <item :meta="item.meta" />
       </template>
@@ -29,6 +28,7 @@
 import path from 'path'
 import { isExternal } from '@/utils/validate'
 import Item from './Item'
+// import shuju from '/static/data/data.json'
 import AppLink from './Link'
 
 export default {

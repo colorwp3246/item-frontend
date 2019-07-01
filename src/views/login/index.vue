@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <h3 class="title">vue-admin-template</h3>
+      <h3 class="title">后台管理系统</h3>
       <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon-class="user" />
@@ -25,13 +25,13 @@
       </el-form-item>
       <el-form-item>
         <el-button :loading="loading" type="primary" style="width:100%;" @click.native.prevent="handleLogin">
-          Sign in
+          登录
         </el-button>
       </el-form-item>
-      <div class="tips">
-        <span style="margin-right:20px;">username: admin</span>
-        <span> password: admin</span>
-      </div>
+      <!--<div class="tips">-->
+        <!--<span style="margin-right:20px;">username: admin</span>-->
+        <!--<span> password: admin</span>-->
+      <!--</div>-->
     </el-form>
   </div>
 </template>
@@ -87,6 +87,7 @@ export default {
       }
     },
     handleLogin() {
+
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
@@ -96,10 +97,16 @@ export default {
           }).catch(() => {
             this.loading = false
           })
+
         } else {
           console.log('error submit!!')
           return false
         }
+      })
+      this.$store.dispatch('getToken').then(()=>{
+        console.log("存储成功了")
+      }).catch(err=>{
+        console.log(err)
       })
     }
   }
@@ -149,6 +156,8 @@ $light_gray:#eee;
   height: 100%;
   width: 100%;
   background-color: $bg;
+  background: url("http://www.zq100.com/api/files/file?fileId=25ee298c5427404194adc0260a4fe1f5") no-repeat;
+  background-size:100% 100%;
   .login-form {
     position: absolute;
     left: 0;

@@ -1,27 +1,23 @@
 import request from '@/utils/request'
-
-export function login(username, password) {
+//获取用token
+export function getTokenApi() {
   return request({
-    url: '/user/login',
-    method: 'post',
-    data: {
-      username,
-      password
-    }
-  })
+    url: `${process.env.BASE_LOGIN}/auth/getToken`,
+    method: 'get'
+})
 }
-
-export function getInfo(token) {
+//刷新token
+export function getRefreshToken(params){
   return request({
-    url: '/user/info',
+    url: `${process.env.BASE_LOGIN}/auth/refreshToken`,
     method: 'get',
-    params: { token }
+    params
   })
 }
-
-export function logout() {
+//获取用户信息
+export function getUserInfo() {
   return request({
-    url: '/user/logout',
-    method: 'post'
+    url: `${process.env.BASE_SERVE}/user/getUserInfo`,
+    method: 'get',
   })
 }

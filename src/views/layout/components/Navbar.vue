@@ -2,22 +2,28 @@
   <div class="navbar">
     <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
     <breadcrumb />
-    <el-dropdown class="avatar-container" trigger="click">
-      <div class="avatar-wrapper">
-        <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-        <i class="el-icon-caret-bottom"/>
-      </div>
-      <el-dropdown-menu slot="dropdown" class="user-dropdown">
-        <router-link class="inlineBlock" to="/">
-          <el-dropdown-item>
-            Home
+    <!--<div>-->
+      <template>
+        <!--<change-language  class="right-menu-item hover-effect"/>-->
+      </template>
+      <el-dropdown class="avatar-container" trigger="click">
+        <div class="avatar-wrapper">
+          <span>欢迎您:用户</span>
+          <i class="el-icon-caret-bottom"/>
+        </div>
+        <el-dropdown-menu slot="dropdown" class="user-dropdown">
+          <!--<router-link class="inlineBlock" to="/">-->
+            <el-dropdown-item>
+              <span @click="adminData">管理员</span>
+            </el-dropdown-item>
+          <!--</router-link>-->
+          <el-dropdown-item divided>
+            <span style="display:block;" @click="userData">用户</span>
           </el-dropdown-item>
-        </router-link>
-        <el-dropdown-item divided>
-          <span style="display:block;" @click="logout">LogOut</span>
-        </el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
+        </el-dropdown-menu>
+      </el-dropdown>
+    <!--</div>-->
+
   </div>
 </template>
 
@@ -25,33 +31,62 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
-
 export default {
   components: {
     Breadcrumb,
-    Hamburger
+    Hamburger,
   },
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      'avatar',
+      'name',
     ])
   },
+   create(){
+     this.$store.dispatch('getmenus',1)
+   },
   methods: {
     toggleSideBar() {
       this.$store.dispatch('ToggleSideBar')
     },
-    logout() {
-      this.$store.dispatch('LogOut').then(() => {
-        location.reload() // 为了重新实例化vue-router对象 避免bug
-      })
+    // logout() {
+    //   this.$store.dispatch('LogOut').then(() => {
+    //     location.reload() // 为了重新实例化vue-router对象 避免bug
+    //   })
+    // },
+    adminData(){
+      this.$store.dispatch('getmenus',2)
+      this.$router.push("/example/approval")
+    },
+    userData(){
+      this.$store.dispatch('getmenus',1)
+      this.$router.push("/example/operationRecord")
     }
   }
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-.navbar {
+  .right-menu-item {
+    display: inline-block;
+    padding: 0 8px;
+    height: 100%;
+    font-size: 18px;
+    color: #5a5e66;
+    vertical-align: text-bottom;
+
+    &.hover-effect {
+      cursor: pointer;
+      transition: background .3s;
+
+      &:hover {
+        background: rgba(0, 0, 0, .025)
+      }
+    }
+  }
+
+  .navbar {
   height: 50px;
   line-height: 50px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.12), 0 0 3px 0 rgba(0,0,0,.04);
@@ -73,21 +108,10 @@ export default {
     position: absolute;
     right: 35px;
     .avatar-wrapper {
-      cursor: pointer;
-      margin-top: 5px;
-      position: relative;
-      line-height: initial;
-      .user-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-      }
-      .el-icon-caret-bottom {
-        position: absolute;
-        right: -20px;
-        top: 25px;
-        font-size: 12px;
-      }
+     display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items:center;
     }
   }
 }

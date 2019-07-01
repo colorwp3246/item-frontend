@@ -1,0 +1,293 @@
+//public
+$boxShadow: 0 0 12px #ccc;  //全局boxshadow
+$boxShadowHover: 0 0 12px #929494;  //hover全局boxshadow
+$boxShadowHover1: 0 0 8px #cacaca;
+$top:-4px;            //hover位移
+$transition:all .3s;  //
+$xd-red: #f13939;     //西点红
+$ModuleTitle:#0d1c28; //公共大标题title颜色
+$borderRadius: 3px;   //border-radius
+$active: #3e71a8;
+$active1: #537eab;
+
+//heard
+$heardLine:#cccccc;   //登录注册中间线条颜色
+$hot-lingHight: 44px; //热门搜索高度
+$xd-lan1: #6cbceb;    //欢迎来到西电
+$xd-lan2: #73c0ec;    //header-bottom颜色
+$heardSearchColor: #071435; //热门搜索文字颜色
+$heardHotServe: #818a9f;    //热门搜所标题颜色
+$heardSearchBg: #f1f2f3;    //搜索背景颜色
+$heardInputColor: #333;  //搜索框字体颜色
+
+//apply 首页-热门应用
+$applyColor:#010101;
+
+
+
+//hall 首页-场景式服务
+$hallTitleColor:#0d1c28;  //标题
+$hallTextColor:#727475;   //描述文字
+$hallSliderItemBg:#cccccc;  //轮播控制器颜色
+$hallSliderActiveBg:#0d1c28;//轮播控制器选中颜色
+
+
+//power 首页-全责清单
+$powerTitleColor:$hallTitleColor; //责权清单标题颜色
+
+
+//convenient  首页-便民查询
+$convBg:#f1f2f3;  //背景颜色
+$convHoverBg:#e1e2e2;  //hover背景颜色
+
+
+//mainData  首页-专题大数据
+$titleColor:#e8e8e8;  //标题颜色
+
+
+//news  首页-政策新闻
+$newsTitleColor:#161f26;  //标题颜色
+$newsItemColor:#666666;   //文字描述颜色
+$newsTimeColor:#999999;   //新闻时间颜色
+
+//footer    页脚
+$footerBg:#f1f2f3;        //背景颜色
+$footerBgLine:#d2d2d2;    //线条颜色
+$footerTextColor:#2e323b; //链接文字颜色
+$footerAddColor:$newsItemColor; //地址文字颜色
+
+//sliderBar   侧边栏
+$sliderTextColor:#232425;//文字颜色
+$sliderBg:#eaeaea;  //hover背景颜色
+$sliderBorder:1px solid #dcdcdc;  //hover背景颜top色
+
+
+//AfterLanding  登陆后头部
+$arrowWidth: 8px;
+$arrowColor: #ccc;
+$headerHeight: 110px;
+
+//login   登录
+$loginTop:17px;
+$loginBorderColor:#eaeaea;
+
+//Information   个人空间-个人资料
+$infTableTitleColor:#5d6063;  //基本信息key
+$infTableValueColor:#112534;  //基本信息value
+$infBoxShadow: 0 0 12px #dedede; //背景boxshadow
+$infLine:#ebecf1;   //分割线
+$infIconBg:#f3f3f3; //图标背景色
+$infTitleColor:#0d1c28; //一卡通颜色
+$infEditBg:#e5e7ee; //一卡通颜色
+
+//centerData  个人空间-我的数据
+$centerData: 1px solid #d6d6d6; //table 线条颜色
+$centerTh: #f9f9f9;   //th背景色
+$centerPerBg: #d9d9d9;//百分比框背景色
+$centerPerRangBg: #678ebe;//百分比背景色
+
+//task  个人空间-我的任务
+$taskColor:#ffa700; //任务颜色
+$taskBgColor:#edf2fe; //背景颜色
+$taskBorderColor:#cbe0f8; //边框颜色
+$taskTitleBg: $convBg; //边框颜色
+
+//recommend 个人空间-相关推荐
+$recomTrBorder: 1px solid #e6e9f1;
+$recomBorder: 1px solid #e2e2e2;
+$recomActiveTitle: #7fb4e7;
+$recomThColor: #727475;
+
+
+//AppDetails 应用详情
+$appBtnBg: #eef3f9;
+$statistics: #3b4247;
+
+//information 应用详情-个人信息
+$infTableBg:#f2f2f2;
+
+
+//Material 应用详情-申请材料
+$mateTableBorder: #e2e2e2;
+$materialTableTh: $infTableBg;
+
+
+//LeftSliderBar 应用详情-左侧导航
+$appLeftBarLine: 1px solid #e2e2e2;
+
+
+//groupTitle
+$groupTitleBg:#f6f6f6;
+$groupNumberColor:#8c8e8f;
+
+//searchCell
+$searchCellBorderColor: #e2e2e2;
+$searchMoreBg: #f1f2f3;
+$searchMoreBgH: #e6e9ec;
+
+
+// news 新闻列表
+$newsTextColor:#666666;
+$newsBottomColor:#ccc;
+
+
+
+
+
+///////场景
+
+//离校场景 ProcessingFlow
+$leaveBtnBg: #527eab; //按钮背景色
+$leaveFraction: #f1f2f4; //分数背景
+$leaveMoreColor: #178dd3; //更多颜色
+
+//新职工入职 entry
+$entryBg1:#ceecff;
+$entryBg2:#4394e8;
+$entryActive:#ff6621;
+$entryActive1:#ffe1d4;
+$entryAnswer:#22b173;
+$entrySliderBg:#e0effe;
+$entryText:#333333;
+$entryText1:#666666;
+$checkMark:#2aa238;
+
+//全服务大厅 FullService
+$choiceBorder:#8fa8c3;
+$choiceBg:#eef3f9;
+$choiceColor:#406083;
+$choiceClear:#848484;
+$choiceListBorder:#ebeef5;
+$fontSize14:14px;
+$fontSize15:15px;
+$fontSize16:16px;
+$fontSize17:17px;
+$fontSize18:18px;
+$fontSize19:19px;
+$fontSize20:20px;
+$fontcolor:#ffffff;
+$fontcolor2:#000000;
+$fontcolors3:#eeeff0;
+$fontcolor4:#b9b9b9;
+$fontcolor5:#31a3fc;
+$fontcolor6:#333333;
+$fontcolor7:#ee3c18;
+$fontcolor8:#555555;
+$fontcolor9:#0d1c28;
+$fontcolor10:#a7b0b7;
+$margeTop1:24px;
+
+
+
+
+//public
+body,*{
+  font-size: 15px;
+  color: $ModuleTitle;
+}
+.hoverTop{
+  &:hover{
+    box-shadow: 0 0 8px #b3b3b3;
+  }
+}
+.tc{
+  text-align: center;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.handFalse{
+  cursor: not-allowed!important;
+}
+.change{
+  border: 1px solid $centerPerRangBg;
+  color: $centerPerRangBg;
+  background-color: $appBtnBg;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: $borderRadius;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  &:hover{
+    background-color: $centerPerRangBg;
+    border: 1px solid $centerPerRangBg;
+    color: #ffffff;
+    border-radius: $borderRadius;
+    transition: all .3s;
+  }
+  &.entry{
+    height: 28px;
+    line-height: 28px;
+  }
+}
+.hoverBorder{
+  border:1px solid $choiceBorder;
+}
+.borderBottom{
+  border-bottom: 4px solid $ModuleTitle;
+}
+.boxShadow{
+  box-shadow: $boxShadowHover;
+}
+.boxShadow1{
+  box-shadow: $boxShadowHover1;
+}
+.fixed{
+  position: fixed;
+  top: 0;
+  z-index: 998;
+  background: #fff;
+  width: 100%;
+}
+.otherTip{
+  margin-top: 20px;
+  padding: 24px 0 50px 0;
+  color: $newsTimeColor;
+  span{
+    color: $xd-red;
+  }
+}
+.sceneTitleContent{
+  border-left: 1px solid #ccc;
+  margin-left: 10px;
+}
+.sequence{
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: $active;
+  color: #ffffff;
+  position: relative;
+  top: 0px;
+  margin-right: 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.noData{
+  text-align: center;
+  color: $ModuleTitle;
+  font-size: 16px;
+  padding: 50px 0;
+}
+.noselect { //禁止选中文字
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+.dataUpData{
+  color: $ModuleTitle;
+  font-size: 16px;
+  text-align: center;
+  margin: 150px auto;
+}

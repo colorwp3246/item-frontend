@@ -7,8 +7,8 @@ export default {
       type: Object,
       default: () => {
         return {
-          title: '',
-          icon: ''
+          menuname: '',
+          iconcls: ''
         }
       }
     }

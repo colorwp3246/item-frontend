@@ -3,7 +3,6 @@
 @import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
-
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -19,10 +18,18 @@ label {
 html {
   height: 100%;
   box-sizing: border-box;
+  overflow-x: hidden; overflow-y: auto;
 }
 
 #app {
   height: 100%;
+}
+
+ul {
+  list-style: none;
+  clear:both;
+  padding: 0;
+  margin: 0;
 }
 
 *,
@@ -67,6 +74,32 @@ a:hover {
     height: 0;
   }
 }
+//标准的清除浮动的方法
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
 
 //main-container全局样式
 .app-main {
@@ -75,4 +108,115 @@ a:hover {
 
 .app-container {
   padding: 20px;
+}
+
+.el-row {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.el-col {
+  border-radius: 4px;
+}
+
+.bg-purple-dark {
+  background: #99a9bf;
+}
+
+.bg-purple {
+  background: #d3dce6;
+}
+
+.bg-purple-light {
+  background: #e5e9f2;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+
+.row-bg {
+  padding: 10px 0;
+  background-color: #f9fafc;
+}
+
+.flexlayout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.vl-notify {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  z-index: 1000 !important;
+}
+
+.vl-notify-mask {
+  background-color: #000 !important;
+  opacity: .5 !important;
+  z-index: 999 !important;
+}
+
+.vl-notify.vl-notify-alert h2.vl-notice-title {
+  font-size: 16px !important;
+  height: 48px !important;
+  line-height: 48px !important;
+}
+
+.vl-notify.vl-notify-alert h2.vl-notice-title .icon-remove:before {
+  font-size: 16px;
+}
+
+.vl-notify.vl-notify-alert .notify-btn-primary {
+  background-color: #3e71a8;
+  border: 1px solid #3e71a8;
+  border-radius: 0;
+}
+
+.textHidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("http://www.zq100.com/api/files/file?fileId=f8754cc3c6e9457cacf56fd9199cea51")
+}
+.fl{
+  float:left;
+}
+.fr {
+  float: right;
+}
+.reCircle{
+  animation: mymove 500ms;
+}
+@keyframes mymove {
+  from {
+    transform: rotate(0deg);
+  }to {
+       transform: rotate(360deg);
+     }
 }

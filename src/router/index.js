@@ -5,10 +5,8 @@ import Router from 'vue-router'
 // detail: https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading
 
 Vue.use(Router)
-
 /* Layout */
 import Layout from '../views/layout/Layout'
-
 /**
 * hidden: true                   if `hidden:true` will not show in the sidebar(default is false)
 * alwaysShow: true               if set true, will always show the root menu, whatever its child routes length
@@ -23,125 +21,129 @@ import Layout from '../views/layout/Layout'
   }
 **/
 export const constantRouterMap = [
-  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
 
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/example/operationRecord',
     name: 'Dashboard',
     hidden: true,
-    children: [{
-      path: 'dashboard',
-      component: () => import('@/views/dashboard/index')
-    }]
   },
-
   {
     path: '/example',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/example/operationRecord',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '目录清单管理模块', icon: 'example'},
     children: [
+      // {
+      //   path: 'table',
+      //   name: 'Table',
+      //   component: () => import('@/views/table/index'),
+      //   meta: { title: '事项概揽', icon: 'table' }
+      // },
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'operationRecord',
+        name: 'operationRecord',
+        component: () => import('@/views/operationRecord/index'),
+        meta: { title: '实施清单', icon: 'tree' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
+        path: 'approval',
+        name: 'approval',
+        component: () => import('@/views/approval/index'),
+        meta: { title: '待审批', icon: 'tree' }
+      },
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
+        path: 'releaseList',
+        name: 'releaseList',
+        component: () => import('@/views/releaseList/index'),
+        meta: { title: '已发布清单', icon: 'tree' }
+      },
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
+        path: 'releaseArticle',
+        name: 'releaseArticle',
+        component: () => import('@/views/releaseArticle'),
+        meta: { title: '发布文章', icon: 'tree' }
+      },
+      {
+        path: 'articleManage',
+        name: 'articleManage',
+        component: () => import('@/views/articleManage'),
+        meta: { title: '文章管理', icon: 'tree' }
+      },
+      // {
+      //   path: 'approvalReason',
+      //   name: 'approvalReason',
+      //   component: () => import('@/views/approvalReason/index'),
+      //   meta: { title: '已审批', icon: 'tree' }
+      // },
+      {
+        path: 'dataAnalysis',
+        name: 'dataAnalysis',
+        component: () => import('@/views/dataAnalysis/index'),
+        meta: { title: '统计分析', icon: 'tree' }
+      },
+      {
+        path: 'logRecord',
+        name: 'logRecord',
+        component: () => import('@/views/logRecord/index'),
+        meta: { title: '日志记录', icon: 'tree' }
+      },
+      {
+        path: 'dataDictionary',
+        name: 'dataDictionary',
+        component:() => import('@/views/dataDictionary/index'),
+        meta: { title: '数据字典', icon: 'tree' },
+        children:[
           {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            path: 'organization',
+            name: 'organization',
+            component:() => import('@/views/dataDictionary/organization'),
+            meta: { title: '组织架构', icon: 'form' }
           },
           {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
+            path: 'itemtype',
+            name: 'itemtype',
+            component:() => import('@/views/dataDictionary/itemtype'),
+            meta: { title: '办件类型', icon: 'form' }
           },
           {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
+            path: 'servicescene',
+            name: 'servicescene',
+            component:() => import('@/views/dataDictionary/servicescene'),
+            meta: { title: '服务场景', icon: 'form' }
+          },
+          {
+            path: 'theme',
+            name: 'theme',
+            component:() => import('@/views/dataDictionary/theme'),
+            meta: { title: '事项主题', icon: 'form' }
+          },
+          {
+            path: 'operationsystem',
+            name: 'operationsystem',
+            component:() => import('@/views/dataDictionary/operationsystem'),
+            meta: { title: '业务系统', icon: 'form' }
+          },
+          {
+            path: 'serviceobject',
+            name: 'serviceobject',
+            component:() => import('@/views/dataDictionary/serviceobject'),
+            meta: { title: '服务对象', icon: 'form' }
+          },
+          {
+            path: 'officelist',
+            name: 'officelist',
+            component:() => import('@/views/dataDictionary/officelist'),
+            meta: { title: '办理科室', icon: 'form' }
+          },
+
         ]
       },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        meta: { title: 'menu2' }
-      }
     ]
   },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
-
   { path: '*', redirect: '/404', hidden: true }
 ]
 
