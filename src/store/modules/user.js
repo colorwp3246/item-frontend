@@ -164,14 +164,15 @@ const user = {
           commit('GETUSER',res.data.data)
           setUserInfo(JSON.stringify(res.data.data))
           setUserInfosName(res.data.data.userName)
-          getYearUserInfo().then(data => {
-            console.log(data,'我是年终考核的用户')
-            commit('GETYEARUSER',data.data.data)
-            setYearUser(JSON.stringify(data.data.data))
-            resolve(data.data.data)
-          }).catch(err => {
-            reject()
-          })
+          // getYearUserInfo().then(data => {
+          //   console.log(data,'我是年终考核的用户')
+          //   commit('GETYEARUSER',data.data.data)
+          //   setYearUser(JSON.stringify(data.data.data))
+          //   resolve(data.data.data)
+          // }).catch(err => {
+          //   reject()
+          // })
+          resolve(res.data.data)
         }).catch(err => {
           reject()
         })

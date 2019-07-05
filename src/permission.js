@@ -36,6 +36,7 @@ router.beforeEach((to, from, next) => {
       if(to.path==='/example/operationRecord'){
         store.dispatch('gettokensave').then(res=>{
           store.dispatch('getuser').then(data=>{
+            console.log(data)
             // const roles = data.roleIds
             // store.dispatch('GenerateRoutes', { roles }).then(() => {
             //   router.addRoutes(store.getters.addRouters)
