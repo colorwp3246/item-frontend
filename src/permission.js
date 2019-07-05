@@ -44,12 +44,13 @@ router.beforeEach((to, from, next) => {
       if(to.path==='/example/operationRecord'){
         store.dispatch('gettokensave').then(res=>{
           store.dispatch('getuser').then(data=>{
-            const roles = data.roleIds
-            store.dispatch('GenerateRoutes', { roles }).then(() => {
-              router.addRoutes(store.getters.addRouters)
-              next({ ...to, replace: true })
-              NProgress.done()
-            })
+            // const roles = data.roleIds
+            // store.dispatch('GenerateRoutes', { roles }).then(() => {
+            //   router.addRoutes(store.getters.addRouters)
+            //
+            //   NProgress.done()
+            // })
+            next({ ...to, replace: true })
           })
         },err=>{
           console.log(err)
