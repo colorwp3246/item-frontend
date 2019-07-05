@@ -14,12 +14,12 @@
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <!--<router-link class="inlineBlock" to="/">-->
             <el-dropdown-item>
-              <span @click="adminData">管理员</span>
+              <span @click="adminData">退出登陸</span>
             </el-dropdown-item>
           <!--</router-link>-->
-          <el-dropdown-item divided>
-            <span style="display:block;" @click="userData">用户</span>
-          </el-dropdown-item>
+          <!--<el-dropdown-item divided>-->
+            <!--<span style="display:block;" @click="userData">用户</span>-->
+          <!--</el-dropdown-item>-->
         </el-dropdown-menu>
       </el-dropdown>
     <!--</div>-->
@@ -31,6 +31,7 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
+import {removeToken} from '@/utils/auth'
 export default {
   components: {
     Breadcrumb,
@@ -57,12 +58,18 @@ export default {
     //   })
     // },
     adminData(){
-      this.$store.dispatch('getmenus',2)
-      this.$router.push("/example/approval")
+      this.$store.dispatch("LogOut").then(res=>{
+        window.location.href=`${process.env.BASE_TOKEN}/api//auth/logout?redirect=${process.env.BASE_TOKEN}/example`
+        removeToken()
+      }).catch(err=>{
+        console.log(err)
+      })
+      // this.$store.dispatch('getmenus',2)
+      // this.$router.push("/example/approval")
     },
     userData(){
-      this.$store.dispatch('getmenus',1)
-      this.$router.push("/example/operationRecord")
+      // this.$store.dispatch('getmenus',1)
+      // this.$router.push("/example/operationRecord")
     }
   }
 }
