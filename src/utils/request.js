@@ -33,7 +33,7 @@ export default function service(url, options) {
   let subscribers = [];
   const defaultOptions = {
     headers: {
-      Authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyQ2F0ZWdvcnkiOiJ5anMiLCJ1c2VyVXVpZCI6ImZhYTBmZWU4ODM2MTQ2YWRhNTljNDNkZTAyZDlkOWFkIiwicGVybWlzc2lvbk5hbWVzIjoicGFnZTpxdWVyeSIsImV4cCI6MTU2MDU2NzE4MSwidXNlck51bWJlciI6IjE3MTAxMjEyNTE1Iiwicm9sZU5hbWVzIjoiYWRtaW4sbWFuYWdlcixub3JtYWwifQ.yTGg4D9sU53SRyrDACRMbFe_NbciGdjFpqGI9v_NhbU',
+      Authorization:localStorage.getItem("accessToken"),
     },
     withCredentials: true,
     url: url,

@@ -135,8 +135,8 @@ export const asyncRouterMap=[
   { path: '*', redirect: '/error', hidden: true }
 ]
 export default new Router({
-  // mode: 'history', // require service support
-  // base: '/example/',
+  mode: 'history', // require service support
+  base: '/example/',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 })
