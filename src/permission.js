@@ -15,16 +15,6 @@ router.beforeEach((to, from, next) => {
     //   console.log("走这里2")
     if(store.getters.rolesArr.length===0){
       console.log(store.getters.rolesArr,'2')
-      // store.dispatch('getuser').then(data=>{
-      //   const roles = data.roleIds
-      //   console.log(data,roles,'权限1')
-      //   store.dispatch('GenerateRoutes', { roles }).then(() => {
-      //     router.addRoutes(store.getters.addRouters)
-      //     // console.log(store.getters.routers,'加载路由2')
-      //     next({ ...to, replace: true })
-      //   })
-      // })
-      // store.dispatch('getuser').then(res=>{
       store.dispatch('getYearUser').then(data => {
         const roles = data.roleIds
         store.dispatch('GenerateRoutes', {roles}).then(() => {
