@@ -54,8 +54,7 @@
             </el-table-column>
             <el-table-column label="事项状态" width="110" align="center" prop='itemState'>
               <template slot-scope="scope">
-                {{scope.row.itemState}}
-                {{ scope.row.itemState|itemStateDetail }}
+                {{ scope.row.itemState|itemStateDetail}}
               </template>
             </el-table-column>
             <el-table-column label="更新时间" width="210" align="center" prop="updatetime">
@@ -373,6 +372,7 @@
       dataState,
       handleTypes,
       paymentOperation,
+      itemStateDetail
     },
     data() {
       return {

@@ -8,7 +8,7 @@
       </template>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <span>欢迎您:用户</span>
+          <span>欢迎您:{{powerName}}</span>
           <i class="el-icon-caret-bottom"/>
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -41,6 +41,7 @@ export default {
       'sidebar',
       'avatar',
       'name',
+      'powerName'
     ])
   },
    create(){

@@ -7,7 +7,7 @@ export function getUserInfo() {
 }
 //年终考核用户信息
 export function getYearUserInfo() {
-  return request(`${process.env.BASE_YEAR}/user/getUserInfo`,{
+  return request(`${process.env.BASE_SERVE}/user/getUserInfo`,{
     method: 'get',
   })
 }

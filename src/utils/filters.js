@@ -32,15 +32,22 @@ export function paymentOperation(data) {
   }
 }
 export function itemStateDetail(data) {
-  switch (data) {
-    case 0:
-      return '正常'
-      break
-    case 1:
-      return '已暂停'
-      break
-    case 2:
-      return '已废除'
-      break
+  // switch (data) {
+  //   case 0:
+  //     return '正常';
+  //     break
+  //   case 1:
+  //     return '已暂停';
+  //     break
+  //   case 2:
+  //     return '已废除';
+  //     break
+  // }
+  if(data===0){
+    return '正常';
+  }else if(data===1){
+    return '已暂停';
+  }else if(data===2){
+    return '已废除';
   }
 }

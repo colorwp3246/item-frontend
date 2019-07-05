@@ -3,13 +3,13 @@ const getters = {
   device: state => state.app.device,
   token: state => state.user.token,
   avatar: state => state.user.avatar,
-  status:state=>state.user.statues,
   name: state => state.user.name,
   roles: state => state.user.roles,
   kaitoen:state=>state.user.kaitoken,
-  menu:state=>state.user.menu,
-  accessToken:state=>state.user.accessToken,
-  refreshToken:state=>state.user.refreshToken,
-  userInfo:state=>state.user.userInfo
+  loginName:state=>state.user.userInfo,
+  powerName:state=>state.user.powerName,
+  rolesArr:state=>state.user.rolesArr,
+  addRouters:state=>state.user.addRouters,
+  routers:state=>state.user.routers,
 }
 export default getters

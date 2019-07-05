@@ -29,6 +29,8 @@ export const constantRouterMap = [
     name: 'Dashboard',
     hidden: true,
   },
+]
+export const asyncRouterMap=[
   {
     path: '/example',
     component: Layout,
@@ -36,12 +38,6 @@ export const constantRouterMap = [
     name: 'Example',
     meta: { title: '目录清单管理模块', icon: 'example'},
     children: [
-      // {
-      //   path: 'table',
-      //   name: 'Table',
-      //   component: () => import('@/views/table/index'),
-      //   meta: { title: '事项概揽', icon: 'table' }
-      // },
       {
         path: 'operationRecord',
         name: 'operationRecord',
@@ -72,12 +68,6 @@ export const constantRouterMap = [
         component: () => import('@/views/articleManage'),
         meta: { title: '文章管理', icon: 'tree' }
       },
-      // {
-      //   path: 'approvalReason',
-      //   name: 'approvalReason',
-      //   component: () => import('@/views/approvalReason/index'),
-      //   meta: { title: '已审批', icon: 'tree' }
-      // },
       {
         path: 'dataAnalysis',
         name: 'dataAnalysis',
@@ -144,10 +134,9 @@ export const constantRouterMap = [
   },
   { path: '*', redirect: '/error', hidden: true }
 ]
-
 export default new Router({
-  mode: 'history', // require service support
-  base: '/example/',
+  // mode: 'history', // require service support
+  // base: '/example/',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 })

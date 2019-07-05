@@ -60,10 +60,10 @@ export default function service(url, options) {
       });
       return retryOriginalRequest;
     }else if(response.data.code === 1004 || response.data.code === 1001){
-      window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/assess`
+      window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/example`
     }else if(response.data.code === 1006){
       store.dispatch('LogOut').then(res => {
-        window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/assess`
+        window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/example`
       }, err => {
         console.log(err)
       })
