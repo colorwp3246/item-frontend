@@ -54,6 +54,7 @@
             </el-table-column>
             <el-table-column label="事项状态" width="110" align="center" prop='itemState'>
               <template slot-scope="scope">
+                {{scope.row.itemState}}
                 {{ scope.row.itemState|itemStateDetail }}
               </template>
             </el-table-column>

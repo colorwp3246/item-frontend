@@ -21,8 +21,7 @@ import Layout from '../views/layout/Layout'
   }
 **/
 export const constantRouterMap = [
-  { path: '/404', component: () => import('@/views/404'), hidden: true },
-
+  { path: '/error', component: () => import('@/views/404'), hidden: true },
   {
     path: '/',
     component: Layout,
@@ -143,11 +142,12 @@ export const constantRouterMap = [
       },
     ]
   },
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/error', hidden: true }
 ]
 
 export default new Router({
-  // mode: 'history', //后端支持可开
+  mode: 'history', // require service support
+  base: '/example/',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 })
