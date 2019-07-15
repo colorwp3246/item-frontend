@@ -23,7 +23,6 @@ import $ from "jquery"
 Vue.prototype.$layer = layer(Vue);
 import '@/icons' // icon
 import 'babel-polyfill'
-import 'babel-polyfill';//将es6转为es5
 import '@/permission' // permission control
 import '@/iconfonts/iconfont.css'
 /**
