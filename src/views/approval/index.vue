@@ -193,6 +193,11 @@
                   {{itemSystem===''?'否':'是'}}
                 </el-form-item>
               </el-col>
+              <el-col :span="8">
+                <el-form-item label="受理条件" :label-width="formLabelWidth" prop="handleCondition">
+                  {{items.itemCondition}}
+                </el-form-item>
+              </el-col>
             </el-row>
             <el-row v-if='itemSystem!==""'>
               <el-col :span="8">

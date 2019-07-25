@@ -115,7 +115,6 @@
                     v-model="form.mainDepartment"
                     @change="handleChange">
                   </el-cascader>
-                  {{form.mainDepartment}}
                 </el-form-item>
               </el-col>
               <el-col :span="8">
@@ -247,6 +246,11 @@
                     <el-radio label="是"></el-radio>
                     <el-radio label="否"></el-radio>
                   </el-radio-group>
+                </el-form-item>
+              </el-col>
+              <el-col :span="8">
+                <el-form-item label="受理条件" :label-width="formLabelWidth" prop="handleCondition">
+                  <el-input v-model="form.handleCondition" class="inputWidth"></el-input>
                 </el-form-item>
               </el-col>
             </el-row>
@@ -721,6 +725,11 @@
                       </el-radio-group>
                     </el-form-item>
                   </el-col>
+                  <el-col :span="8">
+                    <el-form-item label="受理条件" :label-width="formLabelWidth" prop="handleCondition">
+                      <el-input v-model="form.handleCondition" class="inputWidth"></el-input>
+                    </el-form-item>
+                  </el-col>
                 </el-row>
                 <el-row v-if="form.wheSystem==='是'">
                   <el-col :span="8">
@@ -1123,6 +1132,11 @@
                   {{itemSystem===''?'否':'是'}}
                 </el-form-item>
               </el-col>
+              <el-col :span="8">
+                <el-form-item label="受理条件" :label-width="formLabelWidth" prop="handleCondition">
+                  {{items.itemCondition}}
+                </el-form-item>
+              </el-col>
             </el-row>
             <el-row v-if='itemSystem!==""'>
               <el-col :span="8">
@@ -1349,6 +1363,7 @@
           handleAddress: '',//办理地址
           handleTime: '',//办理时间
           handlePhone: '',//办理电话
+          handleCondition:'',
           operationSystem: null,//业务系统
           transDepartment: '',//是否跨部门1
           collaborativeDepartment: '',//协同部门1
@@ -1406,6 +1421,9 @@
           ],
           handlePhone: [
             {required: true, message: '办理电话不能为空', trigger: 'blur',},
+          ],
+          handleCondition:[
+            {required: true, message: '办理条件不能为空', trigger: 'blur',}
           ],
           wheSystem: [
             {required: true, message: '必填项哦', trigger: 'blur',},
@@ -1773,6 +1791,7 @@
                 handleAddress: this.form.handleAddress,//办理地址
                 handleTime: this.form.handleTime,//办理时间
                 handlePhone: this.form.handlePhone,//办理电话
+                handleCondition:this.form.handleCondition,//办理条件
                 transDepartment: this.form.transDepartment,//是否跨部门1
                 collaborativeDepartment: this.form.collaborativeDepartment,//协同部门1
                 payment: this.form.payment,//是否收费1
@@ -1884,7 +1903,8 @@
                   handleAddress: obj.handleAddress,
                   // operationSystem: obj.operationSystem,
                   handleTime: obj.handleTime,
-                  handlePhone: obj.handlePhone
+                  handlePhone: obj.handlePhone,
+                  itemCondition:obj.handleCondition
                 },
                 extraInfo: {
                   transDepartment: obj.transDepartment,
@@ -2211,6 +2231,7 @@
                   this.form.office = res.data.data.item.office,
                   this.form.handleAddress = res.data.data.item.handleAddress,
                   this.form.handlePhone = res.data.data.item.handlePhone
+                  this.form.handleCondition=res.data.data.item.itemCondition
                 this.form.handleTime = res.data.data.item.handleTime
                 this.form.itemIntroduction = res.data.data.item.itemIntroduction
                 this.form.itemType = res.data.data.item.itemType
@@ -2576,7 +2597,7 @@
             // } else {
             //   res.data.data.item.itemType = '承诺时间' + res.data.data.item.itemType + '天'
             // }
-            if (res.data.data.operation) {
+            if (res.data.data.operation){
               this.itemSystem = res.data.data.operation
             } else {
               this.itemSystem = ''
