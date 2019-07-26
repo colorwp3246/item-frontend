@@ -3,9 +3,9 @@
     <div class="title">
       <div class="btn">
         <div class="left">
-          <!--<button class="search" @click="addData">新增</button>-->
-          <!--<button class="search" @click="updateData">修改</button>-->
-          <!--<button class="search" @click="deleteData">删除</button>-->
+          <button class="search" @click="addData">新增</button>
+          <button class="search" @click="updateData">修改</button>
+          <button class="search" @click="deleteData">删除</button>
         </div>
       </div>
     </div>
@@ -22,8 +22,8 @@
             @selection-change="updateCheckboxState"
             :cell-style="dialogStyle"
             highlight-current-row>
-            <!--<el-table-column align="center" label="#" width="95" type="selection">-->
-            <!--</el-table-column>-->
+            <el-table-column align="center" label="#" width="95" type="selection">
+            </el-table-column>
             <el-table-column align="left" prop="officeNumber" label="科室编号" width="150">
             </el-table-column>
             <el-table-column align="left" prop="officeName" label="科室名称">
@@ -65,7 +65,7 @@
         <el-row>
           <el-col :span="12">
             <el-form-item label="科室名称" :label-width="formLabelWidth">
-              <el-input v-model="form.officeName" class="inputWidth" disabled="true"></el-input>
+              <el-input v-model="form.officeName" class="inputWidth"></el-input>
             </el-form-item>
           </el-col>
 

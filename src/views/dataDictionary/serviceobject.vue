@@ -3,9 +3,9 @@
     <div class="title">
       <div class="btn">
         <div class="left">
-          <!--<button class="search" @click="addData">新增</button>-->
-          <!--<button class="search" @click="updateData">修改</button>-->
-          <!--<button class="search" @click="deleteData">删除</button>-->
+          <button class="search" @click="addData">新增</button>
+          <button class="search" @click="updateData">修改</button>
+          <button class="search" @click="deleteData">删除</button>
         </div>
       </div>
     </div>
@@ -22,8 +22,8 @@
             @selection-change="updateCheckboxState"
             :cell-style="dialogStyle"
             highlight-current-row>
-            <!--<el-table-column align="center" label="#" :selectable="checkboxT" disabled="true" width="95" type="selection">-->
-            <!--</el-table-column>-->
+            <el-table-column align="center" label="#" :selectable="checkboxT" disabled="true" width="95" type="selection">
+            </el-table-column>
             <el-table-column align="left" prop="target" label="服务对象">
             </el-table-column>
             <el-table-column align="center" prop="updatetime" label="时间" width="200" :formatter="dateFormat">

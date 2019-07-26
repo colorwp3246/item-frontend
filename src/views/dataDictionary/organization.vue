@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import {getAllList,getDetail} from '@/api/dictionary'
+  import {getAllList,getDetail,setRefreshing} from '@/api/dictionary'
   import page from '@/components/paging'
   export default {
     watch: {
@@ -63,6 +63,7 @@
       };
     },
     mounted(){
+      
        this.getOrganizationAll();
     }
   }

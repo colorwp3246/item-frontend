@@ -33,9 +33,8 @@ export default function service(url, options) {
   let subscribers = [];
   const defaultOptions = {
     headers: {
-      Authorization:localStorage.getItem("accessToken"),
-      // Authorization :'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyQ2F0ZWdvcnkiOiJ5anMiLCJ1c2VyVXVpZCI6ImZhYTBmZWU4ODM2MTQ2YWRhNTljNDNkZTAyZDlkOWFkIiwicGVybWlzc2lvbk5hbWVzIjoicGFnZTpxdWVyeSIsImV4cCI6MTU2MDU2NzE4MSwidXNlck51bWJlciI6IjE3MTAxMjEyNTE1Iiwicm9sZU5hbWVzIjoiYWRtaW4sbWFuYWdlcixub3JtYWwifQ.yTGg4D9sU53SRyrDACRMbFe_NbciGdjFpqGI9v_NhbU'
-
+      // Authorization:localStorage.getItem("accessToken"),
+      Authorization :'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyQ2F0ZWdvcnkiOiJ5anMiLCJ1c2VyVXVpZCI6ImZhYTBmZWU4ODM2MTQ2YWRhNTljNDNkZTAyZDlkOWFkIiwicGVybWlzc2lvbk5hbWVzIjoicGFnZTpxdWVyeSIsImV4cCI6MTU2MDU2NzE4MSwidXNlck51bWJlciI6IjE3MTAxMjEyNTE1Iiwicm9sZU5hbWVzIjoiYWRtaW4sbWFuYWdlcixub3JtYWwifQ.yTGg4D9sU53SRyrDACRMbFe_NbciGdjFpqGI9v_NhbU'
 },
     withCredentials: true,
     url: url,
@@ -62,10 +61,10 @@ export default function service(url, options) {
       });
       return retryOriginalRequest;
     }else if(response.data.code === 1004 || response.data.code === 1001){
-      window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/example`
+      // window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/example`
     }else if(response.data.code === 1006){
       store.dispatch('LogOut').then(res => {
-        window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/example`
+        // window.location.href = `${process.env.BASE_TOKEN}/api/auth/login?redirect=${process.env.BASE_TOKEN}/example`
       }, err => {
         console.log(err)
       })

@@ -3,9 +3,9 @@
     <div class="title">
       <div class="btn">
         <div class="left">
-          <!--<button class="search" @click="addData">新增</button>-->
+          <button class="search" @click="addData">新增</button>
           <button class="search" @click="updateData">修改</button>
-          <!--<button class="search" @click="deleteData">删除</button>-->
+          <button class="search" @click="deleteData">删除</button>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
         <el-row>
           <el-col >
             <el-form-item label="系统名称" :label-width="formLabelWidth">
-              <el-input v-model="form.operationName" class="inputWidth" :disabled="true"></el-input>
+              <el-input v-model="form.operationName" class="inputWidth"></el-input>
             </el-form-item>
           </el-col>
         </el-row>

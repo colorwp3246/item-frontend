@@ -42,3 +42,9 @@ export function submitUpdate (params,path){
     data:params
   })
 }
+//组织架构刷新
+export function setRefreshing(){
+  return request(`${process.env.ITEM_BASE_TABLE}/api/v1/organizations/refreshing`,{
+    method:'get',
+  })
+}
